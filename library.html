@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listaFilme</title>
+    <script src="https://kit.fontawesome.com/ed32f17af8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar_style.css">
+    <style>
+        :root {
+            --sidebar-collapsed-width: 100px;
+            --sidebar-expanded-width: 200px;
+            --content-gap: 24px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+        .header
+        {
+            background-color: #f0f2f5;
+            padding: 23px;
+            font-size: 21px;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-left: 100px;
+            border-top-left-radius:10px;
+            border-top-right-radius:80px;
+            border-bottom-right-radius: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: calc(var(--sidebar-collapsed-width) + var(--content-gap));
+            width: calc(100% - var(--sidebar-collapsed-width) - (2 * var(--content-gap)));
+            transition: margin-left 0.3s ease, width 0.3s ease, transform 0.35s ease, opacity 0.35s ease;
+            animation: contentReveal 0.45s ease;
+        }
+        .header h2 {
+            margin: 0;
+            flex-grow: 1;
+        }
+        #add-movie-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size:21px;
+            transition: 0.3s ease;
+            box-shadow: #201b1b 0px 0px 3.1px;
+        }
+        #add-movie-button:hover {
+            background-color: #45a049;
+            box-shadow: #201b1b 0px 0px 5px;
+            font-size: 20px;
+        }
+        .profile_name {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding-right: 20px;
+            gap: 12px;
+            font-size: 19px;
+        }
+        .profile_name span {
+            padding-left: 10px;
+        }
+        .movie-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            animation: cardIn 0.45s ease both;
+            animation-delay: calc(var(--card-index, 0) * 70ms);
+        }
+        .movie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+        #listaFilme {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 10px;
+            padding: 20px;
+            margin-left: calc(var(--sidebar-collapsed-width) + var(--content-gap));
+            width: calc(100% - var(--sidebar-collapsed-width) - (2 * var(--content-gap)));
+            max-width: 100%;
+            transition: margin-left 0.3s ease, width 0.3s ease;
+        }
+        #sidebar.expanded ~ .header,
+        #sidebar.expanded ~ #listaFilme {
+            margin-left: calc(var(--sidebar-expanded-width) + var(--content-gap));
+            width: calc(100% - var(--sidebar-expanded-width) - (2 * var(--content-gap)));
+        }
+        @media (max-width: 768px) {
+            .movie-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .header,
+            #listaFilme,
+            #sidebar.expanded ~ .header,
+            #sidebar.expanded ~ #listaFilme {
+                margin-left: calc(var(--sidebar-collapsed-width) + 12px);
+                width: calc(100% - var(--sidebar-collapsed-width) - 24px);
+            }
+        }
+        @keyframes cardIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes contentReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .header,
+            #listaFilme,
+            .movie-card {
+                animation: none;
+                transition: none;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+<div id="sidebar">
+        <button class="toggle-btn"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <img src="Images/LOGO_6.png" alt="Logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"> <i class="fa-solid fa-house" aria-hidden="true"></i><h2 class="txt">Home</h2></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h2 class="txt">Search</h2></a></li>
+                <li><a href="library.html"><i class="fa-solid fa-bookmark" aria-hidden="true"></i><h2 class="txt">Library</h2></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear" aria-hidden="true"></i><h2 class="txt">Settings</h2></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user" aria-hidden="true"></i><h2 class="txt">Profile</h2></a></li>
+                <li class="login_btn"><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><h2 class="txt">Login</h2></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="header">
+        <h2>Library</h2>
+        
+        <div class="profile_name">
+            <span id="profile-name">"no_name"</span>
+            <i class="fa-regular fa-user" id="user-icon"></i>
+            
+        </div>
+        <div class="add_movie">
+            <button id="add-movie-button" onclick="openAddMovieForm()">Add Movie</button>
+        </div>
+    </div>
+    <div id="listaFilme" class="movie-list">
+        <!-- Movie cards will be dynamically added here -->
+    </div>
+    <script>
+        // Function to open the add movie form
+        function openAddMovieForm() {
+            window.location.href = "library_add_movie.html"; // Redirect to the add movie page
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+                renderMovies();
+            });
+
+function renderMovies() {
+    const container = document.getElementById("listaFilme");
+    container.innerHTML = "";
+
+    let movies = JSON.parse(localStorage.getItem("movies")) || [];
+
+    movies.forEach((movie, index) => {
+        const card = document.createElement("div");
+        card.className = "movie-card";
+        card.style.setProperty("--card-index", index);
+        card.pare
+
+        card.innerHTML = `
+            <div class="movie-content">
+                <h3>${movie.title}</h3>
+                <p>Status: ${movie.status}</p>
+                <p>Rating: ${movie.rating}/10</p>
+                <p>Date: ${movie.date}</p>
+                <p>${movie.review}</p>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const homeTxts = document.querySelectorAll('.txt');
+
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('expanded');
+            const expanded = sidebar.classList.contains('expanded');
+            toggleBtn.innerHTML = expanded
+                ? '<i class="fa-solid fa-arrow-left" aria-hidden="true"></i>'
+                : '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
+            homeTxts.forEach(txt => {
+                if (expanded) {
+                    txt.style.opacity = '1';
+                    txt.style.visibility = 'visible';
+                } else {
+                    txt.style.opacity = '0';
+                    txt.style.visibility = 'hidden';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ed32f17af8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sidebar_style.css">
+    <link rel="stylesheet" href="stylegsi.css">
+    <link rel="stylesheet" href="auth_style.css">
+    <style>
+         #togglePassword {
+            position: relative;
+            right: 35px;
+            top: 7px;
+            transform: translateY(-40%);
+            cursor: pointer;
+            color: #333;
+        }
+        input[type="password"] {
+            padding-right: 30px; /* Adjust padding to make space for the icon */
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid #1a0505;
+            margin: 0;
+        }
+        .section span {
+            color: #1a0505;
+            font-weight: bold;
+            font-size: 1.3em;
+            padding-top: 10px;
+            padding: 0 10px;
+        }
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        .login {
+            width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 100px;
+        }
+        .logo {
+            width: 100px;
+            height: 70px;
+            display: block;
+            margin: 20px auto 10px auto;
+        }
+        hr {
+           flex: 1;
+            border: none;
+            border-top: 2px solid #000000;
+            margin: 0;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <button class="toggle-btn"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <img src="Images/LOGO_6.png" alt="Logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"> <i class="fa-solid fa-house" aria-hidden="true"></i><h2 class="txt">Home</h2></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h2 class="txt">Search</h2></a></li>
+                <li><a href="library.html"><i class="fa-solid fa-bookmark" aria-hidden="true"></i><h2 class="txt">Library</h2></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear" aria-hidden="true"></i><h2 class="txt">Settings</h2></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user" aria-hidden="true"></i><h2 class="txt">Profile</h2></a></li>
+                <li class="login_btn"><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><h2 class="txt">Login</h2></a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="Sidebar_script.js"></script>
+    <div class="login">
+        <h1>Welcome!
+            <br>Please enter your details to Sign Up
+            <hr>
+        </h1>
+        <div class="log-in-buttons">
+            <button class="gsi-material-button">
+                <div class="gsi-material-button-state"></div>
+                <div class="gsi-material-button-content-wrapper">
+                    <div class="gsi-material-button-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                            <path fill="#EA4335"
+                                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
+                            </path>
+                            <path fill="#4285F4"
+                                d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
+                            </path>
+                            <path fill="#FBBC05"
+                                d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
+                            </path>
+                            <path fill="#34A853"
+                                d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
+                            </path>
+                            <path fill="none" d="M0 0h48v48H0z"></path>
+                        </svg>
+                    </div>
+                    <span class="gsi-material-button-contents">Continue with Google</span>
+                    <span style="display: none;">Continue with Google</span>
+                </div>
+            </button>
+        </div>
+        <h2>
+            <div class="section">
+                <hr>
+                <span>OR</span>
+                <hr>
+            </div>
+        </h2>
+        <div class="log-in">
+            <h4>Enter your username</h4>
+            <div class="Username" style="margin-bottom: 20px;">
+                <input type="text" placeholder="Username" required
+                    style="width: 300px; padding: 12px; border-radius: 20px; border: 1px solid #ccc; font-size: 1em; outline: none; margin-bottom: 1px; background: #f5f5f5;">
+            </div>
+            <h4>Enter your email</h4>
+            <div class="email">
+                <input type="email" placeholder="Email" required
+                    style="width: 300px; padding: 12px; border-radius: 20px; border: 1px solid #ccc; font-size: 1em; outline: none; margin-bottom: 10px; background: #f5f5f5;">
+            </div>
+            <h4>Enter your password</h4>
+            <div class="Password" style="margin-bottom: 20px;">
+                <input type="password" placeholder="Password" required
+                    style="margin-left:23px; width: 300px; padding: 14px; border-radius: 20px; border: 1px solid #ccc; font-size: 1em; outline: none; margin-bottom: 10px; background: #f5f5f5">
+                    <i class="fa-solid fa-eye" id="togglePassword" onclick="click"></i>
+                </div>
+            <div class="submit">
+                <input type="submit" value="Login"
+                    style="width: 150px; padding: 12px; border-radius: 20px; border: none; background: #222; color: #fff; font-size: 1em; cursor: pointer; transition: background 0.2s;"
+                    >
+                <h3 style="margin-top: 20px; color: #333; font-size: 1em; font-weight: normal;">
+                    Have an account? <a href="login.html">Log In</a>
+                </h3>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        togglePassword.addEventListener('click', function () 
+        {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        }
+    );
+    </script>
+</body>
+
+</html>

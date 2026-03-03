@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ed32f17af8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stylegsi.css">
+    <link rel="stylesheet" href="sidebar_style.css">
+    <link rel="stylesheet" href="auth_style.css">
+
+    <style>
+        .logo {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 20px auto 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <button class="toggle-btn"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <img src="Images/LOGO_6.png" alt="Logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html"> <i class="fa-solid fa-house" aria-hidden="true"></i><h2 class="txt">Home</h2></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h2 class="txt">Search</h2></a></li>
+                <li><a href="library.html"><i class="fa-solid fa-bookmark" aria-hidden="true"></i><h2 class="txt">Library</h2></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear" aria-hidden="true"></i><h2 class="txt">Settings</h2></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user" aria-hidden="true"></i><h2 class="txt">Profile</h2></a></li>
+                <li class="login_btn"><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><h2 class="txt">Login</h2></a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="Sidebar_script.js"></script>
+    <div class="login">
+        <img class="logo" src="Images/LOGO_6.png" alt="Logo">
+        <hr style="border: none; border-top: 1px solid #1a0505; margin: 0px 0.5px;">
+        <h1>Welcome!
+            <br>Please enter your details to Sign Up
+        </h1>
+        <div class="log-in-buttons">
+            <button class="gsi-material-button">
+                <div class="gsi-material-button-state"></div>
+                <div class="gsi-material-button-content-wrapper">
+                    <div class="gsi-material-button-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                            <path fill="#EA4335"
+                                d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z">
+                            </path>
+                            <path fill="#4285F4"
+                                d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z">
+                            </path>
+                            <path fill="#FBBC05"
+                                d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z">
+                            </path>
+                            <path fill="#34A853"
+                                d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z">
+                            </path>
+                            <path fill="none" d="M0 0h48v48H0z"></path>
+                        </svg>
+                    </div>
+                    <span class="gsi-material-button-contents">Continue with Google</span>
+                    <span style="display: none;">Continue with Google</span>
+                </div>
+            </button>
+        </div>
+        <h2>
+            <div class="section">
+                <hr>
+                <span style="padding: 0 10px;">OR</span>
+                <hr>
+            </div>
+        </h2>
+        <div class="log-in">
+            <h4>Enter your Email or Username</h4>
+            <div class="email">
+                <input type="email/username" placeholder="Email/Username" required>
+            </div>
+            <h4>Enter your Password</h4>
+            <div class="Password">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Login">
+                <h3 style="margin-top: 10px; color: #333; font-size: 1em; font-weight: normal;">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
+                </h3>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
